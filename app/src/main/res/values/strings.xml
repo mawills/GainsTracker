@@ -3,10 +3,10 @@
 
     <string name="app_name">GainsTracker</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_entry">EntryActivity</string>
-    <string name="title_activity_graph">GraphActivity</string>
-    <string name="title_activity_settings_page">SettingsPageActivity</string>
-    <string name="title_activity_entries">EntriesActivity</string>
+    <string name="title_activity_entry">Enter A New Exercise:</string>
+    <string name="title_activity_graph">View Your Progress</string>
+    <string name="title_activity_settings_page">Settings</string>
+    <string name="title_activity_entries">View Previous Entries</string>
     <string name="log_new_exercise_button">LOG NEW EXERCISE</string>
     <string name="view_progress_button">VIEW PROGRESS GRAPH</string>
     <string name="hello_world">hello_world</string>
