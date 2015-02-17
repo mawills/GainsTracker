@@ -1,5 +1,6 @@
 package matthewwills.gainstracker;
 
+
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,14 +8,30 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+
 
 public class MainActivity extends ActionBarActivity{
+
+    String FILENAME = "exercise_object_file";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Open and close an empty file for first-time users.
+        FileInputStream fis;
+        try {
+            fis = openFileInput(FILENAME);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ois.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
