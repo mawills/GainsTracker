@@ -78,8 +78,6 @@ public class GraphActivity extends ActionBarActivity {
 
                 //Check if the ArrayList is empty. If so, display "No data" message. If not, make graph.
                 if(selectedExerciseArrayList.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "no data",
-                            Toast.LENGTH_SHORT).show();
                     TextView noDataToDisplay = (TextView)findViewById(R.id.no_data_to_display_text);
                     GraphView noGraphToDisplay = (GraphView)findViewById(R.id.graph);
                     noDataToDisplay.setVisibility(View.VISIBLE);
@@ -142,7 +140,8 @@ public class GraphActivity extends ActionBarActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                TextView nothingToDisplay = (TextView) findViewById(R.id.no_data_to_display_text);
+                TextView noDataToDisplay = (TextView)findViewById(R.id.no_data_to_display_text);
+                noDataToDisplay.setVisibility(View.GONE);
             }
         });
     }
