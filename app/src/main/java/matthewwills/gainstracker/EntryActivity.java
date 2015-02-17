@@ -132,7 +132,9 @@ public class EntryActivity extends ActionBarActivity implements View.OnClickList
         int weight = Integer.parseInt(weightTextField.getText().toString());
 
         if((reps < 1 )||
+                reps > 20 ||
                 weight < 1 ||
+                weight > 2000 ||
                 repsTextField.length() == 0 ||
                 weightTextField.length() == 0)
         {

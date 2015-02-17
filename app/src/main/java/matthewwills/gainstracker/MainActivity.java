@@ -32,21 +32,22 @@ public class MainActivity extends ActionBarActivity{
         try {
             fis = openFileInput(FILENAME);
             ObjectInputStream ois = new ObjectInputStream(fis);
+            exerciseEntriesFromFile = (ArrayList) ois.readObject();
             ois.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        //Save an empty ArrayList and close
         FileOutputStream fos;
         try {
-            fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            fos = openFileOutput(FILENAME,Context.MODE_PRIVATE);
             ObjectOutputStream ois = new ObjectOutputStream(fos);
             ois.writeObject(exerciseEntriesFromFile);
             ois.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
 
