@@ -86,8 +86,6 @@ public class GraphActivity extends ActionBarActivity {
                     noGraphToDisplay.setVisibility(View.GONE);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "found data",
-                            Toast.LENGTH_SHORT).show();
                     //Convert the ArrayList to an Array to populate DataPoint array.
                     selectedExerciseArray = new Exercise[selectedExerciseArrayList.size()];
                     selectedExerciseArray = selectedExerciseArrayList.toArray(selectedExerciseArray);
@@ -105,6 +103,7 @@ public class GraphActivity extends ActionBarActivity {
                     //Create a new graph and adjust its visual properties
                     GraphView graph = (GraphView) findViewById(R.id.graph);
                     LineGraphSeries<DataPoint> series = new LineGraphSeries<>(graphData);
+                    graph.removeAllSeries();
                     graph.addSeries(series);
                     TextView noDataToDisplay = (TextView)findViewById(R.id.no_data_to_display_text);
                     noDataToDisplay.setVisibility(View.GONE);
