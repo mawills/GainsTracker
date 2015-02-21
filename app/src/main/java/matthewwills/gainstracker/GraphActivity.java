@@ -125,7 +125,7 @@ public class GraphActivity extends ActionBarActivity {
 
 
 
-                    graph.getGridLabelRenderer().setNumHorizontalLabels(selectedExerciseArrayList.size());
+//                    graph.getGridLabelRenderer().setNumHorizontalLabels(selectedExerciseArrayList.size());
 
                     //Set the y-axis scaling.
                     int maxYValue = 0;
@@ -147,8 +147,8 @@ public class GraphActivity extends ActionBarActivity {
                     graph.getViewport().setScalable(true);
                     graph.getViewport().setScrollable(true);
                     graph.getViewport().setXAxisBoundsManual(true);
-                    graph.getViewport().setMinX(minX.getTime());
-                    graph.getViewport().setMaxX(maxXDate.getTime());
+//                    graph.getViewport().setMinX(minX.getTime());
+//                    graph.getViewport().setMaxX(maxXDate.getTime());
                     graph.getViewport().setYAxisBoundsManual(true);
                     graph.getViewport().setMinY(0);
                     graph.getViewport().setMaxY(maxYValue);
