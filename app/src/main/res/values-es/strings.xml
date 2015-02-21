@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GainsTracker</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_entry">Introduzca Un Nuevo Ejercicio:</string>
+    <string name="title_activity_graph">Progreso Gráfico</string>
+    <string name="title_activity_settings_page">Ajustes</string>
+    <string name="title_activity_entries">Entradas Anteriores</string>
+    <string name="log_new_exercise_button">REGISTRO NUEVO EJERCICIO</string>
+    <string name="view_progress_button">VER GRÁFICO PROGRESO</string>
+    <string name="hello_world">hello_world</string>
+    <string name="date_label_text">Fecha:</string>
+    <string name="lift_label_text">Ejercicio:</string>
+    <string name="view_entries_button">VER ENTRADAS ANTERIORES</string>
+    <string name="log_it_button_text">GRABAR</string>
+    <string name="select_lift">Seleccionar Ejercicio</string>
+    <string name="no_data_to_display">NINGÚN DATO</string>
+    <string name="delete_saved_data_dialog">Estás seguro?</string>
+    <string name="signature">Matthew Wills 2015</string>
+    <string name="graph_title">Uno Repetición Máximo v Tiempo</string>
+    <string-array name="exercise_name_list">
+        <item>Squat</item>
+        <item>Deadlift</item>
+        <item>Bench Press</item>
+        <item>Overhead Press</item>
+        <item>Row</item>
+    </string-array>
+    <string name="delete_saved_data_button">ELIMINAR DATOS GUARDADOS</string>
+
+</resources>
