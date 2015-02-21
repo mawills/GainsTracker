@@ -22,7 +22,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Lift: "
+                android:text="@string/lift_label_text_entry"
                 android:id="@+id/liftLabel"
                 android:layout_weight="1"
                 android:singleLine="true"/>
@@ -67,7 +67,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Weight: "
+                android:text="@string/weight_label_text"
                 android:id="@+id/weightLabel"
                 android:layout_weight="1"
                 android:singleLine="true"/>
@@ -91,7 +91,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Reps: "
+                android:text="@string/reps_label_text"
                 android:id="@+id/repsLabel"
                 android:layout_weight="1"
                 android:singleLine="true"/>

@@ -20,6 +20,9 @@
     <string name="delete_saved_data_dialog">Are you sure?</string>
     <string name="signature">Matthew Wills 2015</string>
     <string name="graph_title">One Rep Max v Time</string>
+    <string name="lift_label_text_entry">Lift:</string>
+    <string name="weight_label_text">Weight:</string>
+    <string name="reps_label_text">Reps:</string>
     <string-array name="exercise_name_list">
         <item>Squat</item>
         <item>Deadlift</item>

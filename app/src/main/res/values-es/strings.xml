@@ -27,5 +27,8 @@
         <item>Row</item>
     </string-array>
     <string name="delete_saved_data_button">ELIMINAR DATOS GUARDADOS</string>
+    <string name="lift_label_text_entry">Ejercicio:</string>
+    <string name="weight_label_text">Peso:</string>
+    <string name="reps_label_text">Repeticiónes:</string>
 
 </resources>
