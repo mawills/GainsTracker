@@ -61,7 +61,7 @@ public class SettingsPageActivity extends ActionBarActivity {
         //Create "Are you sure?" dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder
-                .setMessage("Are you sure?")
+                .setMessage(getString(R.string.delete_saved_data_dialog))
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //Open and clear the Exercise ArrayList saved on internal storage.

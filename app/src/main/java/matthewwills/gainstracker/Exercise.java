@@ -10,7 +10,6 @@ public class Exercise implements Serializable, Comparable<Exercise> {
     private String lift;
     private int weight;
     private int reps;
-    private int oneRepMax;
     private Calendar calendar;
 
 
