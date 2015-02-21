@@ -19,6 +19,7 @@
     <string name="no_data_to_display">NO DATA TO DISPLAY</string>
     <string name="delete_saved_data_dialog">Are you sure?</string>
     <string name="signature">Matthew Wills 2015</string>
+    <string name="graph_title">One Rep Max v Time</string>
     <string-array name="exercise_name_list">
         <item>Squat</item>
         <item>Deadlift</item>

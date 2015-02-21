@@ -17,9 +17,13 @@ import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import org.joda.time.DateTime;
+import org.joda.time.Days;
+
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -109,6 +113,18 @@ public class GraphActivity extends ActionBarActivity {
 
                     //Format the x-axis
                     graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
+
+//                    Calendar earliestDate = selectedExerciseArray[0].getCalendar();
+//                    Calendar latestDate = selectedExerciseArray[selectedExerciseArrayList.size()-1].getCalendar();
+//
+//                    DateTime earliestDateTime = new DateTime(earliestDate);
+//                    DateTime latestDateTime = new DateTime(latestDate);
+//
+//                    int daysBetween = Days.daysBetween(earliestDateTime,latestDateTime).getDays();
+//                    graph.getGridLabelRenderer().setNumHorizontalLabels(daysBetween);
+
+
+
                     graph.getGridLabelRenderer().setNumHorizontalLabels(selectedExerciseArrayList.size());
 
                     //Set the y-axis scaling.
@@ -127,6 +143,7 @@ public class GraphActivity extends ActionBarActivity {
                     Date maxXDate = selectedExerciseArray[selectedExerciseArrayList.size()-1].getCalendar().getTime();
 
                     //Adjust the visual properties of the graph.
+                    graph.setTitle(getString(R.string.graph_title));
                     graph.getViewport().setScalable(true);
                     graph.getViewport().setScrollable(true);
                     graph.getViewport().setXAxisBoundsManual(true);
