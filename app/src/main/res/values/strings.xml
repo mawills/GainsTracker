@@ -16,7 +16,7 @@
     <string name="log_it_button_text">LOG IT</string>
     <string name="delete_saved_data_button">DELETE SAVED DATA</string>
     <string name="select_lift">Select Lift</string>
-    <string name="no_data_to_display">NO DATA TO DISPLAY</string>
+    <string name="no_data_to_display">INSUFFICIENT DATA</string>
     <string name="delete_saved_data_dialog">Are you sure?</string>
     <string name="signature">Matthew Wills 2015</string>
     <string name="graph_title">One Rep Max v Time</string>

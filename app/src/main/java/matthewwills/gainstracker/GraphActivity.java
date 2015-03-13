@@ -17,14 +17,9 @@ import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 
 public class GraphActivity extends ActionBarActivity {
@@ -80,8 +75,8 @@ public class GraphActivity extends ActionBarActivity {
                     }
                 }
 
-                //Check if the ArrayList is empty. If so, display "No data" message. If not, make graph.
-                if(selectedExerciseArrayList.isEmpty()) {
+                //Check if the ArrayList is empty or size 1. If so, display "No data" message. If not, make graph.
+                if(selectedExerciseArrayList.isEmpty() || selectedExerciseArrayList.size() == 1) {
                     TextView noDataToDisplay = (TextView)findViewById(R.id.no_data_to_display_text);
                     GraphView noGraphToDisplay = (GraphView)findViewById(R.id.graph);
                     noDataToDisplay.setVisibility(View.VISIBLE);
@@ -111,47 +106,40 @@ public class GraphActivity extends ActionBarActivity {
                     noDataToDisplay.setVisibility(View.GONE);
                     graph.setVisibility(View.VISIBLE);
 
-                    //Format the x-axis
+                    //Format the x-axis labels
                     graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
 
-//                    Calendar earliestDate = selectedExerciseArray[0].getCalendar();
-//                    Calendar latestDate = selectedExerciseArray[selectedExerciseArrayList.size()-1].getCalendar();
-//
-//                    DateTime earliestDateTime = new DateTime(earliestDate);
-//                    DateTime latestDateTime = new DateTime(latestDate);
-//
-//                    int daysBetween = Days.daysBetween(earliestDateTime,latestDateTime).getDays();
-//                    graph.getGridLabelRenderer().setNumHorizontalLabels(daysBetween);
-
-
-
-//                    graph.getGridLabelRenderer().setNumHorizontalLabels(selectedExerciseArrayList.size());
 
                     //Set the y-axis scaling.
                     int maxYValue = 0;
                     for (int i = 0; i < selectedExerciseArrayList.size(); i++) {
-                        graphData[i] = new DataPoint(i, selectedExerciseArray[i].getOneRepMax());
                         if (maxYValue < selectedExerciseArray[i].getOneRepMax()) {
                             maxYValue = selectedExerciseArray[i].getOneRepMax();
                         }
                     }
 
-                    //Set the x-axis start point
-                    Date minX = selectedExerciseArray[0].getCalendar().getTime();
+                    int minYValue = 10000;
+                    for (int i = 0; i < selectedExerciseArrayList.size(); i++) {
+                        if (minYValue > selectedExerciseArray[i].getOneRepMax()) {
+                            minYValue = selectedExerciseArray[i].getOneRepMax();
+                        }
+                    }
 
-                    //Set the x-axis end point
-                    Date maxXDate = selectedExerciseArray[selectedExerciseArrayList.size()-1].getCalendar().getTime();
 
                     //Adjust the visual properties of the graph.
                     graph.setTitle(getString(R.string.graph_title));
-                    graph.getViewport().setScalable(true);
+                    graph.getViewport().setScalable(false);
                     graph.getViewport().setScrollable(true);
-                    graph.getViewport().setXAxisBoundsManual(true);
-//                    graph.getViewport().setMinX(minX.getTime());
-//                    graph.getViewport().setMaxX(maxXDate.getTime());
                     graph.getViewport().setYAxisBoundsManual(true);
-                    graph.getViewport().setMinY(0);
                     graph.getViewport().setMaxY(maxYValue);
+                    if(minYValue > 10){
+                        int a = minYValue - 10;
+                        graph.getViewport().setMinY(a);
+                    }
+                    else{
+                        graph.getViewport().setMinY(0);
+                    }
+
                 }
             }
 
